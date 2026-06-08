@@ -1,0 +1,48 @@
+[
+  {
+    "doc_id": "consult_048",
+    "text": "On examination, the patient presents with a flat face and overfolded helices bilaterally. He has a mixed hearing impairment and his abdomen is scaphoid in appearance.",
+    "expected_hpo_ids": [
+      "HP:0000365",
+      "HP:0000396",
+      "HP:0000410",
+      "HP:0012368"
+    ]
+  },
+  {
+    "doc_id": "consult_030",
+    "text": "On examination, the patient was noted to have protruding ears bilaterally and an abnormality of the palmar creases with a single transverse crease on the right palm. An EEG was performed and showed no EEG abnormality.",
+    "expected_hpo_ids": [
+      "HP:0000411",
+      "HP:0000954",
+      "HP:0010490"
+    ]
+  },
+  {
+    "doc_id": "consult_026",
+    "text": "On examination, the patient has proportionally long toes bilaterally. The ears demonstrate a mild abnormality of the ear without overfolded helix. The posterior neck shows a possible low posterior hairline. The patient denies freckles in the groin region.",
+    "expected_hpo_ids": [
+      "HP:0000598",
+      "HP:0002162",
+      "HP:0010511"
+    ]
+  },
+  {
+    "doc_id": "consult_052",
+    "text": "The proband's mother reports a history of macules. On examination, the patient exhibits prominent superficial veins over the chest and bilateral upper extremities. The patient does not demonstrate thin vermilion border, and there is no bulbous nose or lower limb asymmetry noted.",
+    "expected_hpo_ids": [
+      "HP:0001015"
+    ]
+  },
+  {
+    "doc_id": "consult_027",
+    "text": "During the examination, the patient was noted to have a right-sided iris coloboma giving the appearance of a keyhole pupil. Dermatologic survey revealed several papules on the trunk and extremities. Lower extremity assessment demonstrated bilateral rocker bottom feet with a prominent calcaneal prominence and convex sole contour.",
+    "expected_hpo_ids": [
+      "HP:0000612",
+      "HP:0001838",
+      "HP:0011303",
+      "HP:0012428",
+      "HP:0200034"
+    ]
+  }
+]

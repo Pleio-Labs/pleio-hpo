@@ -1,0 +1,4 @@
+StringID	Text	Term	Negated	Spans
+s1	MOUTH: High arched palate	HP:0000218		7-25
+s2	Unremarkable findings	NA		
+s3	thin upper lip with cleft	HP:0000219	X	0-4,20-25

@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pleio-hpo"
+version = "0.1.1"
+description = "Offline HPO code extraction from free-text clinical notes"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+authors = [{ name = "Pleio Labs", email = "ismael@pleiolabs.com" }]
+keywords = ["hpo", "phenotype", "clinical-nlp", "biomedical"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "torch>=2.0,<3.0",
+    "transformers>=4.45,<5.0",
+    "huggingface_hub>=0.34,<1.0",
+    "sentence-transformers>=2.5",
+    "spacy>=3.8,<3.9",
+    "pyahocorasick>=2.0",
+    "fastobo>=0.12",
+    "click>=8.1",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov",
+    "ruff>=0.6",
+    "mypy>=1.10",
+]
+
+[project.scripts]
+pleio-hpo = "pleio_hpo.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Pleio-Labs/pleio-hpo"
+Documentation = "https://github.com/Pleio-Labs/pleio-hpo#readme"
+Repository = "https://github.com/Pleio-Labs/pleio-hpo"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+# Bundle the small frozen assets (hp.obo + HPO version pin). The large runtime
+# models are fetched on demand by `pleio-hpo download`, NOT wheeled (each exceeds
+# PyPI's ~100 MB cap):
+#   - data/validator/**     PubMedBERT validator (~418 MB)
+#   - data/hpo/index*.npz   embedding index (~149 MB)
+pleio_hpo = ["data/**/*"]
+
+[tool.setuptools.exclude-package-data]
+pleio_hpo = ["data/validator/**", "data/hpo/index*.npz"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+warn_unused_ignores = true
+no_implicit_optional = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

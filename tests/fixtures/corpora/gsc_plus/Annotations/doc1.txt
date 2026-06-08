@@ -1,0 +1,2 @@
+[12::24]	HP_0000256	macrocephaly
+[29::38]	HP_0001252	hypotonia

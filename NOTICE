@@ -1,0 +1,26 @@
+pleio-hpo
+Copyright 2026 Pleio Labs
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This product includes and/or uses the following third-party resources.
+
+BUNDLED DATA
+- Human Phenotype Ontology (HPO), release v2026-02-16 — CC-BY 4.0.
+  Bundled as src/pleio_hpo/data/hpo/hp.obo. Attribution: https://hpo.jax.org/
+  (CC-BY 4.0 permits redistribution with attribution).
+
+MODELS (downloaded on first use via `pleio-hpo download`; not bundled in the wheel)
+- cambridgeltl/SapBERT-from-PubMedBERT-fulltext (Liu et al. 2021) — biomedical
+  embedding model; weights derive from PubMedBERT (MIT).
+- pleio-hpo validator — a PubMedBERT cross-encoder fine-tuned by this project
+  (Apache-2.0), distributed via the Hugging Face Hub. Base model:
+  microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext (Gu et al. 2020,
+  MIT). Its training data is derived from BioCreative VIII Track 3 (BC8) plus
+  synthetic examples.
+- spaCy en_core_web_sm — MIT.
+
+EVALUATION CORPORA (cited in docs/RESULTS.md; not redistributed in this repository)
+- Gold Standard Corpus Plus (GSC+), Lobo et al. 2017.
+- BioCreative VIII Track 3 (BC8), Campbell, Yang et al. 2024.
+- RAG-HPO case-report benchmark, Garcia et al. 2025 (MIT).
